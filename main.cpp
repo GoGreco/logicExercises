@@ -186,6 +186,22 @@ string reverseString(string& word){
 }
 
 //tranposed matrix
+void transposingMatrix(){
+    int matrix1[3][2]={{25, 36}, {87, 98}, {00, 55}};
+
+    int rows = sizeof(matrix1)/sizeof(matrix1[0]);
+    int collum1 = (sizeof(matrix1)/sizeof(matrix1[0][0]))/rows;
+
+    int resultingMatrix[collum1][rows] ={0};
+
+    for(int j = 0; j < collum1; j++){
+        for(int k = 0; k<rows; k++){
+            resultingMatrix[j][k] = matrix1[k][j];
+            cout<<resultingMatrix[j][k]<<" ";
+        };
+        cout<<endl;
+    };
+}
 
 
 
@@ -250,7 +266,8 @@ int main(){
     //reverse word
     cout<< reverseString(wordList[1])<<endl;
 
-
+    //Transposing matrix
+    transposingMatrix();
     
 
     return 0;
