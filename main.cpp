@@ -155,6 +155,40 @@ int findInList(int numberList[], int listSize,int wanted){
 }
 
 
+//calculate the average in a subgroup
+int subAverage(int group[], int groupSize,int innerSize){
+    int innerQuantity = groupSize/innerSize;
+    int sum[innerQuantity]={0};
+   
+    for(int i = 0; i < groupSize; i++){
+        int subIndex = i/innerSize;
+        sum[subIndex] +=group[i];
+    }
+    cout<<"The average of the subgroup 1 is: "<<sum[0]<<endl;
+    cout<<"The average of the subgroup 2 is: "<<sum[1]<<endl;
+    
+    return 0;
+}
+    
+//inverting Strings
+string reverseString(string& word){
+    int begining = 0;
+    int ending = word.length()-1;
+    string buffer;
+
+    while(begining < ending){
+        swap(word[begining], word[ending]);
+        begining++;
+        ending--;
+    }
+
+    return word;
+}
+
+//tranposed matrix
+
+
+
 int main(){
 
     //sum the elements int the array:
@@ -208,6 +242,14 @@ int main(){
     
     int findIndex = findInList(numList, numListSize, 18);
     cout<<"The index is: " << findIndex <<endl<<"The number is: " <<numList[findIndex]<<endl;
+
+    
+    //calculate the average in a subgroup
+    subAverage(numList, 20, 10);
+
+    //reverse word
+    cout<< reverseString(wordList[1])<<endl;
+
 
     
 
